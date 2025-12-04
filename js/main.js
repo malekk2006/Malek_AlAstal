@@ -2,7 +2,7 @@
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// projects data (use your images)
+// projects data
 const projects = [
   { title: 'Network Penetration Lab', desc: 'Simulated pentest environment with Kali and Metasploit.', img: 'assets/project1.webp', link: '#' },
   { title: 'Network Traffic Analyzer', desc: 'Python tool to parse pcap and extract indicators.', img: 'assets/project2.jpg', link: '#' },
@@ -43,9 +43,9 @@ if (themeToggle) {
   themeToggle.textContent = document.body.classList.contains('light') ? '🌞' : '🌙';
 }
 
-// subtle animated background using canvas
+// subtle animated background (particles + connecting lines)
 (function bgCanvas(){
-  const root = document.getElementById('bg-root');
+  const root = document.getElementById('canvas-root');
   if (!root) return;
   const c = document.createElement('canvas');
   c.style.position = 'fixed'; c.style.inset = '0'; c.style.zIndex = '0'; c.style.pointerEvents = 'none';
