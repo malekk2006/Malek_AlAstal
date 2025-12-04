@@ -1,47 +1,21 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>✧ ᴱᴷᴳ.ᴹᴬᴸᴱᴷ ᴬˡᵃˢᵗᵃˡ ✧ — Cyber Security Portfolio</title>
-
-  <!-- Favicons and social preview -->
-  <link rel="icon" href="assets/favicon.jpeg" />
-  <meta property="og:title" content="✧ ᴱᴷᴳ.ᴹᴬᴸᴱᴷ ᴬˡᵃˢᵗᵃˡ ✧ — Cyber Security Portfolio" />
-  <meta property="og:description" content="Portfolio of a Cyber Security student — projects, university, and specialty overview." />
-  <meta property="og:image" content="assets/og-image.jpg" />
-  <meta name="theme-color" content="#071026" />
-
-  <!-- Google Font (optional) -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="assets/favicon.jpeg">
+  <meta property="og:image" content="assets/og-image.jpg">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Preloader -->
-  <div id="preloader" aria-hidden="true">
-    <div class="loader">
-      <svg viewBox="0 0 100 100" width="64" height="64" aria-hidden="true">
-        <defs>
-          <linearGradient id="g" x1="0" x2="1">
-            <stop offset="0" stop-color="#00e6ff"/>
-            <stop offset="1" stop-color="#7c4dff"/>
-          </linearGradient>
-        </defs>
-        <circle cx="50" cy="50" r="40" stroke="url(#g)" stroke-width="6" fill="none" stroke-linecap="round" stroke-dasharray="62.8 188.4"/>
-      </svg>
-    </div>
-  </div>
+  <div id="bg-root" aria-hidden="true"></div>
 
-  <!-- Background container -->
-  <div id="bg-canvas" aria-hidden="true"></div>
-
-  <!-- Header -->
-  <header class="topbar" role="banner">
+  <header class="topbar">
     <div class="container topbar-inner">
       <a class="brand" href="#home">✧ ᴱᴷᴳ.ᴹᴬᴸᴱᴷ ᴬˡᵃˢᵗᵃˡ ✧</a>
 
-      <nav id="nav" class="nav" role="navigation" aria-label="Main navigation">
+      <nav id="nav" class="nav">
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#university">University</a>
@@ -52,70 +26,52 @@
 
       <div class="controls">
         <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">🌙</button>
-        <button id="menu-toggle" class="icon-btn mobile-only" aria-expanded="false" aria-controls="nav" aria-label="Open menu">☰</button>
+        <button id="menu-toggle" class="icon-btn mobile-only" aria-label="Menu">☰</button>
       </div>
     </div>
   </header>
 
-  <!-- Main -->
-  <main class="container" id="main">
-    <!-- Hero -->
-    <section id="home" class="hero" aria-labelledby="hero-title">
+  <main class="container">
+    <section id="home" class="hero">
       <div class="hero-left">
-        <h1 id="hero-title">✧ ᴱᴷᴳ.ᴹᴬᴸᴱᴷ ᴬˡᵃˢᵗᵃˡ ✧</h1>
-        <p class="lead">Cyber Security Student · Network Security · Penetration Testing · Vulnerability Analysis</p>
-        <div class="hero-cta">
-          <a href="#specialty" class="btn">Explore Specialty</a>
-          <a href="#projects" class="btn ghost">See Projects</a>
+        <h1>✧ ᴱᴷᴳ.ᴹᴬᴸᴱᴷ ᴬˡᵃˢᵗᵃˡ ✧</h1>
+        <p class="lead">Cyber Security Student — Network Security · Pentesting · Incident Response</p>
+        <div class="hero-actions">
+          <a class="btn" href="#projects">My Work</a>
+          <a class="btn ghost" href="#specialty">Learn More</a>
         </div>
-
-        <div class="social-row">
-          <a class="social" href="https://instagram.com/malek_alastal_" target="_blank" rel="noopener noreferrer">
-            <img src="assets/social-instagram.jpeg" alt="Instagram" width="28" height="28">
-            <span>@malek_alastal_</span>
-          </a>
-          <a class="social" href="https://wa.me/972598561044" target="_blank" rel="noopener noreferrer">
-            <img src="assets/social-whatsapp.jpeg" alt="WhatsApp" width="28" height="28">
-            <span>+972 59-856-1044</span>
-          </a>
+        <div class="links-row">
+          <a href="https://instagram.com/malek_alastal_" target="_blank"><img src="assets/social-instagram.jpeg" alt="Instagram"> @malek_alastal_</a>
+          <a href="https://wa.me/972598561044" target="_blank"><img src="assets/social-whatsapp.jpeg" alt="WhatsApp"> +972 59-856-1044</a>
         </div>
       </div>
-
       <div class="hero-right">
-        <div class="avatar-wrap">
-          <img src="assets/avatar.webp" alt="Malek AlAstal" class="avatar" loading="lazy">
-          <div class="avatar-badge">
-            <img src="assets/badge-cyber.jpg" alt="Cyber badge" width="48" height="48">
-          </div>
+        <div class="card-avatar">
+          <img src="assets/avatar.webp" alt="Malek AlAstal" class="avatar">
+          <div class="badge"><img src="assets/badge-cyber.jpg" alt="badge"></div>
         </div>
       </div>
     </section>
 
-    <!-- About -->
-    <section id="about" class="card" aria-labelledby="about-title">
-      <h2 id="about-title">About Me</h2>
-      <p>I am ✧ ᴱᴷᴳ.ᴹᴬᴸᴱᴷ ᴬˡᵃˢᵗᵃˡ ✧, a Cyber Security student focused on network security, penetration testing, and vulnerability analysis. I study at the College of Applied Sciences and build practical labs, tools, and educational content.</p>
+    <section id="about" class="card">
+      <h2>About Me</h2>
+      <p>I am ✧ ᴱᴷᴳ.ᴹᴬᴸᴱᴷ ᴬˡᵃˢᵗᵃˡ ✧, a Cyber Security student focused on network security, penetration testing, and vulnerability analysis. I study at the College of Applied Sciences and build labs, tools, and educational content.</p>
     </section>
 
-    <!-- University -->
-    <section id="university" class="card" aria-labelledby="univ-title">
-      <h2 id="univ-title">My University</h2>
-      <div class="univ-grid">
-        <div class="univ-left">
-          <img src="assets/university-logo.png" alt="College of Applied Sciences logo" class="univ-logo" loading="lazy">
-        </div>
-        <div class="univ-right">
-          <h3>College of Applied Sciences</h3>
-          <p>Practical programs, cyber labs, student clubs, and internship opportunities. Official site: <a href="https://my.ucas.edu.ps" target="_blank" rel="noopener noreferrer">my.ucas.edu.ps</a></p>
-        </div>
+    <section id="university" class="card split">
+      <div class="left">
+        <img src="assets/university-logo.png" alt="University logo" class="univ-logo">
+      </div>
+      <div class="right">
+        <h2>College of Applied Sciences</h2>
+        <p>Practical programs, cyber labs, student clubs, and internship opportunities. Official site: <a href="https://my.ucas.edu.ps" target="_blank">my.ucas.edu.ps</a></p>
       </div>
     </section>
 
-    <!-- Specialty -->
-    <section id="specialty" class="card" aria-labelledby="spec-title">
-      <h2 id="spec-title">Cyber Security Specialty</h2>
+    <section id="specialty" class="card">
+      <h2>Cyber Security Specialty</h2>
       <div class="spec-grid">
-        <div class="spec-card">
+        <div>
           <h3>Core Areas</h3>
           <ul>
             <li>Network Security</li>
@@ -124,7 +80,7 @@
             <li>Incident Response</li>
           </ul>
         </div>
-        <div class="spec-card">
+        <div>
           <h3>Practical Path</h3>
           <ol>
             <li>Networking & Linux</li>
@@ -136,24 +92,21 @@
       </div>
     </section>
 
-    <!-- Projects -->
-    <section id="projects" class="card" aria-labelledby="projects-title">
-      <h2 id="projects-title">Projects</h2>
-      <div class="grid" id="projects-list" aria-live="polite"></div>
+    <section id="projects" class="card">
+      <h2>Projects</h2>
+      <div class="projects-grid" id="projects-list"></div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="card" aria-labelledby="contact-title">
-      <h2 id="contact-title">Contact</h2>
+    <section id="contact" class="card">
+      <h2>Contact</h2>
       <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
-      <p>Instagram: <a href="https://instagram.com/malek_alastal_" target="_blank" rel="noopener noreferrer">@malek_alastal_</a></p>
-      <p>WhatsApp: <a href="https://wa.me/972598561044" target="_blank" rel="noopener noreferrer">+972 59-856-1044</a></p>
-      <p>GitHub: <a href="https://github.com/malekk2006" target="_blank" rel="noopener noreferrer">github.com/malekk2006</a></p>
+      <p>Instagram: <a href="https://instagram.com/malek_alastal_" target="_blank">@malek_alastal_</a></p>
+      <p>WhatsApp: <a href="https://wa.me/972598561044" target="_blank">+972 59-856-1044</a></p>
     </section>
   </main>
 
-  <footer class="site-footer" role="contentinfo">
-    © <span id="year"></span> ✧ ᴱᴷᴳ.ᴹᴬᴸᴱᴷ ᴬˡᵃˢᵗᵃˡ ✧ — Cyber Security Student
+  <footer class="site-footer">
+    © <span id="year"></span> ✧ ᴱᴷᴳ.ᴹᴬᴸᴱᴷ ᴬˡᵃˢᵗᵃˡ ✧
   </footer>
 
   <script src="js/main.js"></script>
