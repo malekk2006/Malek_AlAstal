@@ -1,5 +1,4 @@
 :root{
-  /* Dark theme palette */
   --bg-dark: #071029;
   --panel-dark: #0f1724;
   --text-dark: #e6eef8;
@@ -7,7 +6,6 @@
   --accent: #6c5ce7;
   --accent-2: #06b6d4;
 
-  /* Light theme palette */
   --bg-light: #f6f8ff;
   --panel-light: #ffffff;
   --text-light: #0b1220;
