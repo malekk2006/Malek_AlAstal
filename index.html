@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>✧ ᴱᴷᴳ.ᴹᴬᴸᴱᴷ ᴬˡᵃˢᵗᵃˡ ✧</title>
+  <meta name="description" content="Malek Alastal — Cybersecurity student. Portfolio, resources, skills and contact." />
   <link rel="icon" href="assets/favicon.jpeg" type="image/jpeg" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
@@ -28,33 +29,50 @@
         </div>
       </div>
 
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#college" class="nav-link">College</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#resources" class="nav-link">Resources</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
       <div class="controls">
         <button id="themeToggle" class="btn" aria-label="Toggle theme">Light Mode</button>
-        <button id="langToggle" class="btn" aria-label="Toggle language">AR</button>
+        <button id="langToggle" class="btn" aria-label="Toggle language">EN</button>
       </div>
     </div>
   </header>
 
   <main class="container">
-    <!-- Hero -->
+    <!-- Hero (Arabic decorated bio shown first as requested) -->
     <section class="hero" id="home">
       <div class="hero-left">
-        <h2 class="hero-title" id="heroTitle">Hello — I am Malek Alastal</h2>
-        <p class="hero-sub" id="heroSub">Student and Cybersecurity enthusiast. I share resources, projects, and learning links.</p>
+        <h2 class="hero-title" id="heroTitle">𓆩💻 مَـالِـك الأَسْطَـل 𓆪</h2>
 
-        <div class="bio-decor" id="bioDecorEn">
-<pre>𓆩⚙ 𝑴𝒂𝒍𝒆𝒌 𝑨𝒍𝒂𝒔𝒕𝒂𝒍 𓆪
+        <div class="hero-bio">
+          <p class="decor-bio" id="bioAr">
+            ✦ طـالِب فـي هـنـدسـة أمـن الـمـعـلـومـات السـيـبـرانـيـة<br>
+            ✦ شـغـوف بـالـتـقـنـيـة، صـانِـع مـحتـوى تـعـلـيـمـي، وبـاحث عـن الـمـعـرفـة<br>
+            ✦ هـدفـي أرتـقـي بـالـوعي الأمـنـي ونـشـر الـفـائـدة 🛡
+          </p>
+
+          <pre class="decor-bio en" id="bioEn" hidden>
+𓆩⚙ 𝑴𝒂𝒍𝒆𝒌 𝑨𝒍𝒂𝒔𝒕𝒂𝒍 𓆪
 ✧ 𝑪𝒚𝒃𝒆𝒓 𝑺𝒆𝒄𝒖𝒓𝒊𝒕𝒚 𝑬𝒏𝒈𝒊𝒏𝒆𝒆𝒓 𝑺𝒕𝒖𝒅𝒆𝒏𝒕
 ✧ 𝑷𝒂𝒔𝒔𝒊𝒐𝒏𝒂𝒕𝒆 𝒂𝒃𝒐𝒖𝒕 𝒕𝒆𝒄𝒉, 𝒍𝒆𝒂𝒓𝒏𝒊𝒏𝒈 & 𝒔𝒉𝒂𝒓𝒊𝒏𝒈 𝒌𝒏𝒐𝒘𝒍𝒆𝒅𝒈𝒆
-✧ 𝑺𝒕𝒂𝒚 𝒔𝒂𝒇𝒆, 𝒔𝒕𝒂𝒚 𝒄𝒐𝒏𝒏𝒆𝒄𝒕𝒆𝒅 🔐🌍</pre>
+✧ 𝑺𝒕𝒂𝒚 𝒔𝒂𝒇𝒆, 𝒔𝒕𝒂𝒚 𝒄𝒐𝒏𝒏𝒆𝒄𝒕𝒆𝒅 🔐🌍
+          </pre>
         </div>
 
         <div class="hero-actions">
           <a href="#resources" class="btn primary">Browse Resources</a>
           <a href="https://wa.me/972598561044" class="btn outline" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+          <a href="assets/CV.pdf" class="btn" download>Download CV (PDF)</a>
         </div>
 
-        <nav class="inline-social" aria-label="Social links">
+        <div class="contact inline-social" role="navigation" aria-label="Social links">
           <a href="https://instagram.com/malek_alastal_" target="_blank" class="social social-instagram" rel="noopener" aria-label="Instagram">
             <i class="fab fa-instagram" aria-hidden="true"></i>
           </a>
@@ -64,7 +82,7 @@
           <a href="https://github.com/malekk2006" target="_blank" class="social social-github" rel="noopener" aria-label="GitHub">
             <i class="fab fa-github" aria-hidden="true"></i>
           </a>
-        </nav>
+        </div>
       </div>
 
       <div class="hero-right">
@@ -85,17 +103,21 @@
       </div>
     </section>
 
-    <!-- About -->
+    <!-- About (English default, Arabic available via toggle) -->
     <section id="about" class="card">
       <h3 id="aboutTitle">About Me</h3>
       <p id="aboutText">I am Malek Alastal, focused on cybersecurity, vulnerability analysis, and building protective solutions. I work on learning projects and share resources with the community.</p>
     </section>
 
-    <!-- College -->
+    <!-- College (updated decorated English text) -->
     <section id="college" class="card row">
       <div class="col">
-        <h3 id="collegeTitle">University College of Applied Sciences</h3>
-        <p id="collegeText">Proud student at the University College of Applied Sciences, specializing in cybersecurity and practical technologies.</p>
+        <h3 id="collegeTitle">𓆩🎓 Proudly stepped into the universe of tech & security</h3>
+        <p id="collegeText">
+          𓆩🏫 University College of Applied Sciences<br>
+          ✧ This is where my cyber journey begins<br>
+          ✧ With hope, passion, and faith in myself 🌟
+        </p>
         <a href="https://my.ucas.edu.ps" target="_blank" class="btn" rel="noopener">College Website</a>
       </div>
       <div class="col">
@@ -110,10 +132,22 @@
       </div>
     </section>
 
-    <!-- Skills -->
+    <!-- Skills (added HTML/CSS/JS percentages) -->
     <section id="skills" class="card">
       <h3 id="skillsTitle">Skills</h3>
       <div class="skills-list">
+        <div class="skill">
+          <div class="skill-info"><span>HTML</span><span class="percent">95%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-value="95" role="progressbar" aria-valuenow="95"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill-info"><span>JavaScript</span><span class="percent">85%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-value="85" role="progressbar" aria-valuenow="85"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill-info"><span>CSS</span><span class="percent">75%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-value="75" role="progressbar" aria-valuenow="75"></div></div>
+        </div>
         <div class="skill">
           <div class="skill-info"><span>Python</span><span class="percent">90%</span></div>
           <div class="skill-bar"><div class="skill-fill" data-value="90" role="progressbar" aria-valuenow="90"></div></div>
@@ -122,11 +156,24 @@
           <div class="skill-info"><span>Linux</span><span class="percent">80%</span></div>
           <div class="skill-bar"><div class="skill-fill" data-value="80" role="progressbar" aria-valuenow="80"></div></div>
         </div>
-        <div class="skill">
-          <div class="skill-info"><span>Networking</span><span class="percent">75%</span></div>
-          <div class="skill-bar"><div class="skill-fill" data-value="75" role="progressbar" aria-valuenow="75"></div></div>
-        </div>
       </div>
+    </section>
+
+    <!-- Recommendations table -->
+    <section id="recommendations" class="card">
+      <h3>Site Checklist & Recommendations</h3>
+      <table class="rec-table" role="table" aria-label="Recommendations">
+        <tr><td>⚡ Loading speed</td><td>Ensure images are compressed (WebP or optimized JPEG)</td></tr>
+        <tr><td>📱 Mobile responsiveness</td><td>Test layout on mobile screens — text, images, menus</td></tr>
+        <tr><td>🧭 Clear navigation</td><td>Menu: Home – About – Projects – College – Contact</td></tr>
+        <tr><td>🖼 Image & icon quality</td><td>Use high-quality compressed images and official social icons</td></tr>
+        <tr><td>🔎 SEO</td><td>Add meta descriptions, structured H1/H2 headings</td></tr>
+        <tr><td>📄 CV download</td><td>Add a clear "Download CV (PDF)" button</td></tr>
+        <tr><td>📂 Projects / Portfolio</td><td>Show projects with descriptions and GitHub links</td></tr>
+        <tr><td>🎨 Visual animations</td><td>Use subtle entrance and hover effects for polish</td></tr>
+        <tr><td>🛡 HTTPS</td><td>Ensure all links use HTTPS (GitHub Pages provides HTTPS)</td></tr>
+        <tr><td>🌙 Dark / Light mode</td><td>Provide a toggle with contrasting, accessible colors</td></tr>
+      </table>
     </section>
 
     <!-- Resources -->
@@ -138,6 +185,14 @@
         <li><a href="https://www.tryhackme.com" target="_blank" rel="noopener">TryHackMe</a></li>
         <li><a href="https://owasp.org" target="_blank" rel="noopener">OWASP</a></li>
       </ul>
+    </section>
+
+    <!-- Contact / Footer -->
+    <section id="contact" class="card">
+      <h3>Contact</h3>
+      <p>WhatsApp: <a href="https://wa.me/972598561044" target="_blank" rel="noopener">+972 59-856-1044</a></p>
+      <p>Instagram: <a href="https://instagram.com/malek_alastal_" target="_blank" rel="noopener">@malek_alastal_</a></p>
+      <p>GitHub: <a href="https://github.com/malekk2006" target="_blank" rel="noopener">malekk2006</a></p>
     </section>
 
     <footer class="site-footer">
