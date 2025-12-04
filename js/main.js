@@ -1,12 +1,13 @@
 // Set current year
-document.getElementById('year').textContent = new Date().getFullYear();
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// Projects data - replace with your real projects and links
+// Projects data - filenames match your assets folder
 const projects = [
   {
     title: 'Network Penetration Lab',
     desc: 'Simulated penetration testing environment using Kali and Metasploit.',
-    img: 'assets/project1.jpg',
+    img: 'assets/project1.webp',
     link: '#'
   },
   {
@@ -18,7 +19,7 @@ const projects = [
   {
     title: 'Intro to Cryptography',
     desc: 'Beginner series on cryptography fundamentals and public key systems.',
-    img: 'assets/project3.jpg',
+    img: 'assets/project3.jpeg',
     link: '#'
   }
 ];
@@ -44,30 +45,35 @@ if (projectsList) {
 // Mobile menu toggle
 const menuToggle = document.getElementById('menu-toggle');
 const nav = document.getElementById('nav');
-menuToggle && menuToggle.addEventListener('click', () => {
-  const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
-  menuToggle.setAttribute('aria-expanded', String(!expanded));
-  if (nav.style.display === 'flex') {
-    nav.style.display = 'none';
-  } else {
-    nav.style.display = 'flex';
-    nav.style.flexDirection = 'column';
-    nav.style.gap = '8px';
-  }
-});
+if (menuToggle && nav) {
+  menuToggle.addEventListener('click', () => {
+    const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', String(!expanded));
+    if (nav.style.display === 'flex') {
+      nav.style.display = 'none';
+    } else {
+      nav.style.display = 'flex';
+      nav.style.flexDirection = 'column';
+      nav.style.gap = '8px';
+    }
+  });
+}
 
 // Theme toggle with preference saved
 const themeToggle = document.getElementById('theme-toggle');
 const savedTheme = localStorage.getItem('theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
 if (savedTheme === 'light') document.body.classList.add('light');
 updateThemeIcon();
-themeToggle.addEventListener('click', () => {
-  document.body.classList.toggle('light');
-  const isLight = document.body.classList.contains('light');
-  localStorage.setItem('theme', isLight ? 'light' : 'dark');
-  updateThemeIcon();
-});
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('light');
+    const isLight = document.body.classList.contains('light');
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    updateThemeIcon();
+  });
+}
 function updateThemeIcon() {
+  if (!themeToggle) return;
   themeToggle.textContent = document.body.classList.contains('light') ? '🌞' : '🌙';
 }
 
