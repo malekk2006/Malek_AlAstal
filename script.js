@@ -1,11 +1,10 @@
-// Interactions: theme toggle, language toggle, skills animation, entrance animations
 document.addEventListener('DOMContentLoaded', () => {
   const themeBtn = document.getElementById('themeToggle');
   const langBtn = document.getElementById('langToggle');
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // Theme toggle with localStorage and accessible labels
+  // Theme toggle with localStorage
   const savedTheme = localStorage.getItem('theme') || 'dark';
   if (savedTheme === 'light') document.body.classList.add('light');
   updateThemeButton();
@@ -16,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   function updateThemeButton() { themeBtn.textContent = document.body.classList.contains('light') ? 'Dark Mode' : 'Light Mode'; }
 
-  // Language toggle (EN <-> AR) — Arabic bio shown first by default
+  // Language toggle (EN <-> AR) — Arabic bio shown by default
   let lang = localStorage.getItem('lang') || 'ar';
   applyLanguage(lang);
   langBtn.addEventListener('click', () => {
@@ -30,11 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const bioEn = document.getElementById('bioEn');
     if (l === 'ar') {
       doc.lang = 'ar'; doc.dir = 'rtl'; langBtn.textContent = 'EN';
-      // Arabic hero title and bio (already present)
       document.getElementById('heroTitle').textContent = '𓆩💻 مَـالِـك الأَسْطَـل 𓆪';
       bioAr.style.display = 'block';
       if (bioEn) bioEn.hidden = true;
-      // About and other headings in Arabic
       document.getElementById('aboutTitle').textContent = 'نبذة عني';
       document.getElementById('aboutText').textContent = 'أنا مالك العستال، مهتم بالأمن السيبراني، تحليل الثغرات، وبناء حلول حماية. أعمل على مشاريع تعليمية وأشارك موارد للمجتمع.';
       document.getElementById('collegeTitle').textContent = '𓆩🎓 فخور بدخولي عالم التقنية والأمن';
@@ -45,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
       document.querySelector('.btn.outline').innerHTML = '<i class="fab fa-whatsapp"></i> واتس اب';
     } else {
       doc.lang = 'en'; doc.dir = 'ltr'; langBtn.textContent = 'AR';
-      // English hero title and bio
       document.getElementById('heroTitle').textContent = '𓆩⚙ Malek Alastal 𓆪';
       if (bioEn) { bioEn.hidden = false; bioAr.style.display = 'none'; }
       document.getElementById('aboutTitle').textContent = 'About Me';
