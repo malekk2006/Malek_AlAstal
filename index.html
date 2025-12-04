@@ -3,18 +3,27 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Your Name — Cyber Security Student</title>
+  <title>✧ ᴱᴷᴳ.ᴹᴬᴸᴱᴷ ᴬˡᵃˢᵗᵃˡ ✧ — Cyber Security Student</title>
+
+  <!-- Favicons and social preview -->
   <link rel="icon" href="assets/favicon.png">
+  <meta property="og:title" content="✧ ᴱᴷᴳ.ᴹᴬᴸᴱᴷ ᴬˡᵃˢᵗᵃˡ ✧ — Cyber Security Student">
+  <meta property="og:description" content="Cyber Security student portfolio — projects, university info, and specialty overview.">
+  <meta property="og:image" content="assets/og-image.jpg">
+  <meta name="theme-color" content="#071026">
+
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div id="bg-canvas"></div>
+  <!-- Decorative background canvas (particles and glow) -->
+  <div id="bg-canvas" aria-hidden="true"></div>
 
-  <header class="topbar">
+  <!-- Top navigation -->
+  <header class="topbar" role="banner">
     <div class="container topbar-inner">
-      <a class="brand" href="#home">Your Name</a>
+      <a class="brand" href="#home">✧ ᴱᴷᴳ.ᴹᴬᴸᴱᴷ ᴬˡᵃˢᵗᵃˡ ✧</a>
 
-      <nav id="nav" class="nav">
+      <nav id="nav" class="nav" role="navigation" aria-label="Main navigation">
         <a href="#about">About</a>
         <a href="#university">University</a>
         <a href="#specialty">Specialty</a>
@@ -24,52 +33,76 @@
 
       <div class="controls">
         <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">🌙</button>
-        <button id="menu-toggle" class="icon-btn mobile-only" aria-label="Menu">☰</button>
+        <button id="menu-toggle" class="icon-btn mobile-only" aria-expanded="false" aria-controls="nav" aria-label="Open menu">☰</button>
       </div>
     </div>
   </header>
 
-  <main class="container">
-    <section id="home" class="hero">
+  <!-- Main content -->
+  <main class="container" id="main">
+    <section id="home" class="hero" aria-labelledby="hero-title">
       <div class="hero-left">
-        <h1>Your Full Name</h1>
-        <p class="lead">Cyber Security Student · Interested in network security, penetration testing, and vulnerability analysis</p>
+        <h1 id="hero-title">✧ ᴱᴷᴳ.ᴹᴬᴸᴱᴷ ᴬˡᵃˢᵗᵃˡ ✧</h1>
+        <p class="lead">Cyber Security Student · Network security · Penetration testing · Vulnerability analysis</p>
         <div class="hero-cta">
           <a href="#specialty" class="btn">Learn About the Specialty</a>
           <a href="#projects" class="btn ghost">My Projects</a>
         </div>
+
+        <div class="social-row">
+          <a class="social" href="https://instagram.com/malek_alastal_" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <img src="assets/social-instagram.png" alt="Instagram" width="28" height="28">
+            <span>@malek_alastal_</span>
+          </a>
+          <a class="social" href="https://wa.me/972598561044" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <img src="assets/social-whatsapp.png" alt="WhatsApp" width="28" height="28">
+            <span>+972 59-856-1044</span>
+          </a>
+        </div>
       </div>
-      <div class="hero-right">
-        <div class="avatar-wrap">
-          <img src="assets/avatar.jpg" alt="Your photo" class="avatar">
+
+      <div class="hero-right" aria-hidden="false">
+        <div class="avatar-wrap" role="img" aria-label="Profile photo of Malek AlAstal">
+          <img src="assets/avatar.jpg" alt="Malek AlAstal" class="avatar" loading="lazy">
         </div>
       </div>
     </section>
 
-    <section id="about" class="card">
-      <h2>About Me</h2>
-      <p>Write a short bio here: studies, technical skills (for example: networking, operating systems, Python, penetration testing tools), and your career goals.</p>
+    <section id="about" class="card" aria-labelledby="about-title">
+      <h2 id="about-title">About Me</h2>
+      <p>
+        I am ✧ ᴱᴷᴳ.ᴹᴬᴸᴱᴷ ᴬˡᵃˢᵗᵃˡ ✧, a Cyber Security student focused on network security, penetration testing, and vulnerability analysis.
+        I study at the College of Applied Sciences and I build practical labs, tools, and write educational content to share knowledge.
+      </p>
     </section>
 
-    <section id="university" class="card">
-      <h2>My University</h2>
+    <section id="university" class="card" aria-labelledby="univ-title">
+      <h2 id="univ-title">My University</h2>
       <div class="univ-grid">
-        <div>
-          <h3>University Name</h3>
-          <p>Information about the university: faculty, programs, founding year, campus highlights, and academic strengths.</p>
+        <div class="univ-left">
+          <img src="assets/university-logo.png" alt="College of Applied Sciences logo" class="univ-logo" loading="lazy">
         </div>
-        <div>
-          <h3>Facilities and Labs</h3>
-          <p>Computer labs, cyber security labs, student clubs, internship opportunities, and research centers.</p>
+        <div class="univ-right">
+          <h3>College of Applied Sciences</h3>
+          <p>
+            The College of Applied Sciences offers practical and applied programs that prepare students for industry roles.
+            Visit the official site: <a href="https://my.ucas.edu.ps" target="_blank" rel="noopener noreferrer">my.ucas.edu.ps</a>
+          </p>
+          <p>
+            Facilities include computer labs, cyber security labs, student clubs, and internship opportunities.
+          </p>
         </div>
       </div>
     </section>
 
-    <section id="specialty" class="card">
-      <h2>Cyber Security Specialty</h2>
+    <section id="specialty" class="card" aria-labelledby="spec-title">
+      <h2 id="spec-title">Cyber Security Specialty</h2>
       <article class="spec">
         <h3>Introduction</h3>
-        <p>General definition of cyber security, its importance, and main areas: network security, application security, malware analysis, incident response.</p>
+        <p>
+          Cyber security protects systems, networks, and data from digital attacks. Key areas include network security, application security,
+          malware analysis, and incident response.
+        </p>
 
         <h3>Core Courses</h3>
         <ul>
@@ -82,29 +115,31 @@
         <h3>Suggested Practical Path</h3>
         <ol>
           <li>Learn networking basics and Linux</li>
-          <li>Master a programming language such as Python</li>
-          <li>Practice with tools like Wireshark, Nmap, Metasploit</li>
+          <li>Master Python for automation and tooling</li>
+          <li>Practice with Wireshark, Nmap, Metasploit</li>
           <li>Participate in CTFs and build a home lab</li>
         </ol>
       </article>
     </section>
 
-    <section id="projects" class="card">
-      <h2>Projects</h2>
-      <div class="grid" id="projects-list">
-        <!-- Projects are added dynamically by JS -->
+    <section id="projects" class="card" aria-labelledby="projects-title">
+      <h2 id="projects-title">Projects</h2>
+      <div class="grid" id="projects-list" aria-live="polite">
+        <!-- Projects injected by JS -->
       </div>
     </section>
 
-    <section id="contact" class="card">
-      <h2>Contact</h2>
+    <section id="contact" class="card" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
       <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
-      <p>Links: <a href="#">GitHub</a> · <a href="#">LinkedIn</a></p>
+      <p>Instagram: <a href="https://instagram.com/malek_alastal_" target="_blank" rel="noopener noreferrer">@malek_alastal_</a></p>
+      <p>WhatsApp: <a href="https://wa.me/972598561044" target="_blank" rel="noopener noreferrer">+972 59-856-1044</a></p>
+      <p>GitHub: <a href="https://github.com/malekk2006" target="_blank" rel="noopener noreferrer">github.com/malekk2006</a></p>
     </section>
   </main>
 
-  <footer class="site-footer">
-    © <span id="year"></span> Your Name — Cyber Security Student
+  <footer class="site-footer" role="contentinfo">
+    © <span id="year"></span> ✧ ᴱᴷᴳ.ᴹᴬᴸᴱᴷ ᴬˡᵃˢᵗᵃˡ ✧ — Cyber Security Student
   </footer>
 
   <script src="js/main.js"></script>
