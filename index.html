@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>✧ ᴱᴷᴳ.ᴹᴬᴸᴱᴷ ᴬˡᵃˢᵗᵃˡ ✧</title>
-  <link rel="icon" href="assets/favicon.ico">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -14,7 +14,17 @@
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand">
-        <img src="assets/profile.jpg" alt="Profile photo" class="avatar" id="avatarImg">
+        <!-- profile with srcset, sizes, lazy loading and fallback -->
+        <img
+          src="assets/profile.jpg"
+          srcset="assets/profile-320.jpg 320w, assets/profile-640.jpg 640w, assets/profile-1200.jpg 1200w"
+          sizes="(max-width:600px) 160px, 64px"
+          alt="Profile photo Malek Alastal"
+          class="avatar"
+          id="avatarImg"
+          loading="lazy"
+          onerror="this.onerror=null;this.src='assets/profile-fallback.jpg';"
+        >
         <div class="brand-text">
           <h1 class="name">✧ ᴱᴷᴳ.ᴹᴬᴸᴱᴷ ᴬˡᵃˢᵗᵃˡ ✧</h1>
           <p class="role">CYBER SECURITY</p>
@@ -29,7 +39,6 @@
   </header>
 
   <main class="container">
-    <!-- Hero -->
     <section class="hero" id="home">
       <div class="hero-left">
         <h2 class="hero-title" id="heroTitle">Hello — I am Malek Alastal</h2>
@@ -47,31 +56,46 @@
           <a href="https://wa.me/972598561044" class="btn outline" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
         </div>
 
-        <div class="contact inline-social">
-          <a href="https://instagram.com/malek_alastal_" target="_blank" class="social" rel="noopener"><i class="fab fa-instagram"></i> malek_alastal_</a>
-          <a href="https://facebook.com/MalekAlastal" target="_blank" class="social" rel="noopener"><i class="fab fa-facebook"></i> Malek Alastal</a>
-          <a href="https://github.com/malekk2006" target="_blank" class="social" rel="noopener"><i class="fab fa-github"></i> malekk2006</a>
+        <div class="contact inline-social" role="navigation" aria-label="Social links">
+          <!-- social icons with aria-labels and consistent classes -->
+          <a href="https://instagram.com/malek_alastal_" target="_blank" class="social social-instagram" rel="noopener" aria-label="Instagram Malek Alastal">
+            <i class="fab fa-instagram" aria-hidden="true"></i><span class="sr-only">Instagram</span>
+          </a>
+          <a href="https://facebook.com/MalekAlastal" target="_blank" class="social social-facebook" rel="noopener" aria-label="Facebook Malek Alastal">
+            <i class="fab fa-facebook" aria-hidden="true"></i><span class="sr-only">Facebook</span>
+          </a>
+          <a href="https://github.com/malekk2006" target="_blank" class="social social-github" rel="noopener" aria-label="GitHub malekk2006">
+            <i class="fab fa-github" aria-hidden="true"></i><span class="sr-only">GitHub</span>
+          </a>
         </div>
       </div>
 
       <div class="hero-right">
         <div class="profile-card">
-          <img src="assets/profile.jpg" alt="Malek Alastal" class="hero-image" id="heroImage">
+          <!-- hero image with srcset and fallback -->
+          <img
+            src="assets/profile-640.jpg"
+            srcset="assets/profile-320.jpg 320w, assets/profile-640.jpg 640w, assets/profile-1200.jpg 1200w"
+            sizes="(max-width:600px) 220px, 320px"
+            alt="Malek Alastal portrait"
+            class="hero-image"
+            id="heroImage"
+            loading="lazy"
+            onerror="this.onerror=null;this.src='assets/profile-fallback.jpg';"
+          >
           <div class="profile-meta">
             <h3 id="profileName">✧ ᴱᴷᴳ.ᴹᴬᴸᴱᴷ ᴬˡᵃˢᵗᵃˡ ✧</h3>
-            <p class="phone"><i class="fab fa-whatsapp"></i> +972 59-856-1044</p>
+            <p class="phone"><i class="fab fa-whatsapp" aria-hidden="true"></i> +972 59-856-1044</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- About Me -->
     <section id="about" class="card">
       <h3 id="aboutTitle">About Me</h3>
       <p id="aboutText">I am Malek Alastal, focused on cybersecurity, vulnerability analysis, and building protective solutions. I work on learning projects and share resources with the community.</p>
     </section>
 
-    <!-- College -->
     <section id="college" class="card row">
       <div class="col">
         <h3 id="collegeTitle">University College of Applied Sciences</h3>
@@ -79,36 +103,37 @@
         <a href="https://my.ucas.edu.ps" target="_blank" class="btn" rel="noopener">College Website</a>
       </div>
       <div class="col">
-        <img src="assets/college.jpg" alt="College building" class="college-img" id="collegeImg">
+        <img
+          src="assets/college.jpg"
+          srcset="assets/college-640.jpg 640w, assets/college-1200.jpg 1200w"
+          sizes="(max-width:600px) 320px, 600px"
+          alt="University College building"
+          class="college-img"
+          id="collegeImg"
+          loading="lazy"
+          onerror="this.onerror=null;this.src='assets/college-fallback.jpg';"
+        >
       </div>
     </section>
 
-    <!-- Skills -->
     <section id="skills" class="card">
       <h3 id="skillsTitle">Skills</h3>
       <div class="skills-list">
         <div class="skill">
-          <div class="skill-info">
-            <span>Python</span><span class="percent">90%</span>
-          </div>
-          <div class="skill-bar"><div class="skill-fill" data-value="90"></div></div>
+          <div class="skill-info"><span>Python</span><span class="percent">90%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-value="90" aria-valuenow="90" role="progressbar"></div></div>
         </div>
         <div class="skill">
-          <div class="skill-info">
-            <span>Linux</span><span class="percent">80%</span>
-          </div>
-          <div class="skill-bar"><div class="skill-fill" data-value="80"></div></div>
+          <div class="skill-info"><span>Linux</span><span class="percent">80%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-value="80" aria-valuenow="80" role="progressbar"></div></div>
         </div>
         <div class="skill">
-          <div class="skill-info">
-            <span>Networking</span><span class="percent">75%</span>
-          </div>
-          <div class="skill-bar"><div class="skill-fill" data-value="75"></div></div>
+          <div class="skill-info"><span>Networking</span><span class="percent">75%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-value="75" aria-valuenow="75" role="progressbar"></div></div>
         </div>
       </div>
     </section>
 
-    <!-- Resources -->
     <section id="resources" class="card">
       <h3 id="resourcesTitle">Useful Learning Links</h3>
       <ul class="resources-list">
@@ -119,12 +144,9 @@
       </ul>
     </section>
 
-    <!-- Footer -->
     <footer class="site-footer">
       <div class="footer-inner">
-        <div class="left">
-          <p>© <span id="year"></span> ✧ ᴱᴷᴳ.ᴹᴬᴸᴱᴷ ᴬˡᵃˢᵗᵃˡ ✧</p>
-        </div>
+        <div class="left"><p>© <span id="year"></span> ✧ ᴱᴷᴳ.ᴹᴬᴸᴱᴷ ᴬˡᵃˢᵗᵃˡ ✧</p></div>
         <div class="right social-icons">
           <a href="https://instagram.com/malek_alastal_" target="_blank" aria-label="Instagram" rel="noopener"><i class="fab fa-instagram"></i></a>
           <a href="https://facebook.com/MalekAlastal" target="_blank" aria-label="Facebook" rel="noopener"><i class="fab fa-facebook"></i></a>
