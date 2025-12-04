@@ -1,48 +1,77 @@
-// تهيئة عامة
+// Set current year
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// بيانات مشاريع افتراضية يمكن استبدالها
+// Projects data - replace with your real projects and links
 const projects = [
-  {title:'مختبر اختراق شبكي', desc:'محاكاة بيئة لاختبار الاختراق باستخدام Kali وMetasploit', link:'#'},
-  {title:'أداة تحليل حركة الشبكة', desc:'أداة بايثون لتحليل pcap واستخراج مؤشرات الاختراق', link:'#'},
-  {title:'مقال تعليمي عن التشفير', desc:'سلسلة مبسطة عن أساسيات التشفير والمفاتيح العامة', link:'#'}
+  {
+    title: 'Network Penetration Lab',
+    desc: 'Simulated penetration testing environment using Kali and Metasploit.',
+    img: 'assets/project1.jpg',
+    link: '#'
+  },
+  {
+    title: 'Network Traffic Analyzer',
+    desc: 'Python tool to parse pcap files and extract indicators.',
+    img: 'assets/project2.jpg',
+    link: '#'
+  },
+  {
+    title: 'Intro to Cryptography',
+    desc: 'Beginner series on cryptography fundamentals and public key systems.',
+    img: 'assets/project3.jpg',
+    link: '#'
+  }
 ];
 
-// عرض المشاريع ديناميكياً
+// Render projects dynamically
 const projectsList = document.getElementById('projects-list');
-if(projectsList){
-  projects.forEach(p=>{
-    const el = document.createElement('article');
-    el.className = 'card';
-    el.innerHTML = `<h3>${p.title}</h3><p>${p.desc}</p><a class="btn" href="${p.link}">عرض</a>`;
-    projectsList.appendChild(el);
+if (projectsList) {
+  projects.forEach(p => {
+    const card = document.createElement('article');
+    card.className = 'project-card';
+    card.innerHTML = `
+      <img src="${p.img}" alt="${p.title}" loading="lazy">
+      <h3>${p.title}</h3>
+      <p>${p.desc}</p>
+      <div style="margin-top:auto;">
+        <a class="btn" href="${p.link}">View</a>
+      </div>
+    `;
+    projectsList.appendChild(card);
   });
 }
 
-// زر القائمة للهواتف
+// Mobile menu toggle
 const menuToggle = document.getElementById('menu-toggle');
 const nav = document.getElementById('nav');
-menuToggle && menuToggle.addEventListener('click', ()=>{
-  if(nav.style.display === 'flex') nav.style.display = 'none';
-  else nav.style.display = 'flex';
+menuToggle && menuToggle.addEventListener('click', () => {
+  const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+  menuToggle.setAttribute('aria-expanded', String(!expanded));
+  if (nav.style.display === 'flex') {
+    nav.style.display = 'none';
+  } else {
+    nav.style.display = 'flex';
+    nav.style.flexDirection = 'column';
+    nav.style.gap = '8px';
+  }
 });
 
-// تبديل الوضع الليلي وحفظ التفضيل
+// Theme toggle with preference saved
 const themeToggle = document.getElementById('theme-toggle');
-const current = localStorage.getItem('theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-if(current === 'light') document.body.classList.add('light');
+const savedTheme = localStorage.getItem('theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+if (savedTheme === 'light') document.body.classList.add('light');
 updateThemeIcon();
-themeToggle.addEventListener('click', ()=>{
+themeToggle.addEventListener('click', () => {
   document.body.classList.toggle('light');
   const isLight = document.body.classList.contains('light');
   localStorage.setItem('theme', isLight ? 'light' : 'dark');
   updateThemeIcon();
 });
-function updateThemeIcon(){
+function updateThemeIcon() {
   themeToggle.textContent = document.body.classList.contains('light') ? '🌞' : '🌙';
 }
 
-// خلفية جزيئات بسيطة باستخدام canvas
+// Particle background using canvas for cyber effect
 (function initParticles(){
   const canvas = document.createElement('canvas');
   canvas.style.position = 'fixed';
@@ -63,9 +92,9 @@ function updateThemeIcon(){
         x: Math.random()*w,
         y: Math.random()*h,
         r: Math.random()*1.6+0.6,
-        vx: (Math.random()-0.5)*0.3,
-        vy: (Math.random()-0.5)*0.3,
-        hue: Math.random()*360
+        vx: (Math.random()-0.5)*0.4,
+        vy: (Math.random()-0.5)*0.4,
+        hue: 180 + Math.random()*140
       });
     }
   }
