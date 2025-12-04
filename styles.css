@@ -1,17 +1,16 @@
 :root{
   --bg:#071029; --card:#0f1724; --text:#e6eef8; --accent:#6c5ce7; --muted:#9aa7bf;
   --light-bg:#f6f8ff; --light-text:#0b1220;
-  --glass: rgba(255,255,255,0.04);
 }
 *{box-sizing:border-box}
 html,body{height:100%}
 body{
-  margin:0;font-family:Inter, "Noto Naskh Arabic", system-ui, sans-serif;
+  margin:0;font-family:Inter, "Noto Sans", system-ui, sans-serif;
   background:linear-gradient(180deg,#020617 0%, #071029 60%);
   color:var(--text);line-height:1.5;overflow-x:hidden;
 }
 
-/* Animated background layer */
+/* Animated background */
 #bg-animated{
   position:fixed;inset:0;z-index:0;pointer-events:none;
   background:
@@ -20,16 +19,12 @@ body{
   animation: bgShift 12s linear infinite;
   mix-blend-mode:screen;
 }
-@keyframes bgShift{
-  0%{transform:translateY(0) scale(1)}
-  50%{transform:translateY(-30px) scale(1.02)}
-  100%{transform:translateY(0) scale(1)}
-}
+@keyframes bgShift{0%{transform:translateY(0)}50%{transform:translateY(-30px)}100%{transform:translateY(0)}}
 #bg-animated::before, #bg-animated::after{
   content:"";position:absolute;inset:0;background-image:
     radial-gradient(circle at 20% 30%, rgba(255,255,255,0.02) 0 2px, transparent 3px),
     radial-gradient(circle at 70% 60%, rgba(255,255,255,0.015) 0 2px, transparent 3px);
-  opacity:0.9;animation: particleMove 20s linear infinite;
+  animation: particleMove 20s linear infinite;
 }
 @keyframes particleMove{0%{transform:translateX(0)}50%{transform:translateX(-40px)}100%{transform:translateX(0)}}
 
