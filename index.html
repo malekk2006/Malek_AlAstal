@@ -1,28 +1,48 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>✧ ᴱᴷᴳ.ᴹᴬᴸᴱᴷ ᴬˡᵃˢᵗᵃˡ ✧ — Cyber Security Student</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>✧ ᴱᴷᴳ.ᴹᴬᴸᴱᴷ ᴬˡᵃˢᵗᵃˡ ✧ — Cyber Security Portfolio</title>
 
   <!-- Favicons and social preview -->
-  <link rel="icon" href="assets/favicon.jpeg">
-  <meta property="og:title" content="✧ ᴱᴷᴳ.ᴹᴬᴸᴱᴷ ᴬˡᵃˢᵗᵃˡ ✧ — Cyber Security Student">
-  <meta property="og:description" content="Cyber Security student portfolio — projects, university info, and specialty overview.">
-  <meta property="og:image" content="assets/og-image.jpg">
-  <meta name="theme-color" content="#071026">
+  <link rel="icon" href="assets/favicon.jpeg" />
+  <meta property="og:title" content="✧ ᴱᴷᴳ.ᴹᴬᴸᴱᴷ ᴬˡᵃˢᵗᵃˡ ✧ — Cyber Security Portfolio" />
+  <meta property="og:description" content="Portfolio of a Cyber Security student — projects, university, and specialty overview." />
+  <meta property="og:image" content="assets/og-image.jpg" />
+  <meta name="theme-color" content="#071026" />
 
-  <link rel="stylesheet" href="css/style.css">
+  <!-- Google Font (optional) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <!-- background container used by JS to append canvases and overlays -->
+  <!-- Preloader -->
+  <div id="preloader" aria-hidden="true">
+    <div class="loader">
+      <svg viewBox="0 0 100 100" width="64" height="64" aria-hidden="true">
+        <defs>
+          <linearGradient id="g" x1="0" x2="1">
+            <stop offset="0" stop-color="#00e6ff"/>
+            <stop offset="1" stop-color="#7c4dff"/>
+          </linearGradient>
+        </defs>
+        <circle cx="50" cy="50" r="40" stroke="url(#g)" stroke-width="6" fill="none" stroke-linecap="round" stroke-dasharray="62.8 188.4"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Background container -->
   <div id="bg-canvas" aria-hidden="true"></div>
 
+  <!-- Header -->
   <header class="topbar" role="banner">
     <div class="container topbar-inner">
       <a class="brand" href="#home">✧ ᴱᴷᴳ.ᴹᴬᴸᴱᴷ ᴬˡᵃˢᵗᵃˡ ✧</a>
 
       <nav id="nav" class="nav" role="navigation" aria-label="Main navigation">
+        <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#university">University</a>
         <a href="#specialty">Specialty</a>
@@ -37,43 +57,47 @@
     </div>
   </header>
 
+  <!-- Main -->
   <main class="container" id="main">
+    <!-- Hero -->
     <section id="home" class="hero" aria-labelledby="hero-title">
       <div class="hero-left">
         <h1 id="hero-title">✧ ᴱᴷᴳ.ᴹᴬᴸᴱᴷ ᴬˡᵃˢᵗᵃˡ ✧</h1>
-        <p class="lead">Cyber Security Student · Network security · Penetration testing · Vulnerability analysis</p>
+        <p class="lead">Cyber Security Student · Network Security · Penetration Testing · Vulnerability Analysis</p>
         <div class="hero-cta">
-          <a href="#specialty" class="btn">Learn About the Specialty</a>
-          <a href="#projects" class="btn ghost">My Projects</a>
+          <a href="#specialty" class="btn">Explore Specialty</a>
+          <a href="#projects" class="btn ghost">See Projects</a>
         </div>
 
         <div class="social-row">
-          <a class="social" href="https://instagram.com/malek_alastal_" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <a class="social" href="https://instagram.com/malek_alastal_" target="_blank" rel="noopener noreferrer">
             <img src="assets/social-instagram.jpeg" alt="Instagram" width="28" height="28">
             <span>@malek_alastal_</span>
           </a>
-          <a class="social" href="https://wa.me/972598561044" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+          <a class="social" href="https://wa.me/972598561044" target="_blank" rel="noopener noreferrer">
             <img src="assets/social-whatsapp.jpeg" alt="WhatsApp" width="28" height="28">
             <span>+972 59-856-1044</span>
           </a>
         </div>
       </div>
 
-      <div class="hero-right" aria-hidden="false">
-        <div class="avatar-wrap" role="img" aria-label="Profile photo of Malek AlAstal">
+      <div class="hero-right">
+        <div class="avatar-wrap">
           <img src="assets/avatar.webp" alt="Malek AlAstal" class="avatar" loading="lazy">
+          <div class="avatar-badge">
+            <img src="assets/badge-cyber.jpg" alt="Cyber badge" width="48" height="48">
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- About -->
     <section id="about" class="card" aria-labelledby="about-title">
       <h2 id="about-title">About Me</h2>
-      <p>
-        I am ✧ ᴱᴷᴳ.ᴹᴬᴸᴱᴷ ᴬˡᵃˢᵗᵃˡ ✧, a Cyber Security student focused on network security, penetration testing, and vulnerability analysis.
-        I study at the College of Applied Sciences and I build practical labs, tools, and write educational content to share knowledge.
-      </p>
+      <p>I am ✧ ᴱᴷᴳ.ᴹᴬᴸᴱᴷ ᴬˡᵃˢᵗᵃˡ ✧, a Cyber Security student focused on network security, penetration testing, and vulnerability analysis. I study at the College of Applied Sciences and build practical labs, tools, and educational content.</p>
     </section>
 
+    <!-- University -->
     <section id="university" class="card" aria-labelledby="univ-title">
       <h2 id="univ-title">My University</h2>
       <div class="univ-grid">
@@ -82,51 +106,43 @@
         </div>
         <div class="univ-right">
           <h3>College of Applied Sciences</h3>
-          <p>
-            The College of Applied Sciences offers practical and applied programs that prepare students for industry roles.
-            Visit the official site: <a href="https://my.ucas.edu.ps" target="_blank" rel="noopener noreferrer">my.ucas.edu.ps</a>
-          </p>
-          <p>
-            Facilities include computer labs, cyber security labs, student clubs, and internship opportunities.
-          </p>
+          <p>Practical programs, cyber labs, student clubs, and internship opportunities. Official site: <a href="https://my.ucas.edu.ps" target="_blank" rel="noopener noreferrer">my.ucas.edu.ps</a></p>
         </div>
       </div>
     </section>
 
+    <!-- Specialty -->
     <section id="specialty" class="card" aria-labelledby="spec-title">
       <h2 id="spec-title">Cyber Security Specialty</h2>
-      <article class="spec">
-        <h3>Introduction</h3>
-        <p>
-          Cyber security protects systems, networks, and data from digital attacks. Key areas include network security, application security,
-          malware analysis, and incident response.
-        </p>
-
-        <h3>Core Courses</h3>
-        <ul>
-          <li>Networking fundamentals and operating systems</li>
-          <li>Cryptography and protection mechanisms</li>
-          <li>Penetration testing and tools</li>
-          <li>Incident analysis and response</li>
-        </ul>
-
-        <h3>Suggested Practical Path</h3>
-        <ol>
-          <li>Learn networking basics and Linux</li>
-          <li>Master Python for automation and tooling</li>
-          <li>Practice with Wireshark, Nmap, Metasploit</li>
-          <li>Participate in CTFs and build a home lab</li>
-        </ol>
-      </article>
-    </section>
-
-    <section id="projects" class="card" aria-labelledby="projects-title">
-      <h2 id="projects-title">Projects</h2>
-      <div class="grid" id="projects-list" aria-live="polite">
-        <!-- Projects injected by JS -->
+      <div class="spec-grid">
+        <div class="spec-card">
+          <h3>Core Areas</h3>
+          <ul>
+            <li>Network Security</li>
+            <li>Application Security</li>
+            <li>Malware Analysis</li>
+            <li>Incident Response</li>
+          </ul>
+        </div>
+        <div class="spec-card">
+          <h3>Practical Path</h3>
+          <ol>
+            <li>Networking & Linux</li>
+            <li>Python for Security</li>
+            <li>Tools: Wireshark, Nmap, Metasploit</li>
+            <li>CTFs and Home Lab</li>
+          </ol>
+        </div>
       </div>
     </section>
 
+    <!-- Projects -->
+    <section id="projects" class="card" aria-labelledby="projects-title">
+      <h2 id="projects-title">Projects</h2>
+      <div class="grid" id="projects-list" aria-live="polite"></div>
+    </section>
+
+    <!-- Contact -->
     <section id="contact" class="card" aria-labelledby="contact-title">
       <h2 id="contact-title">Contact</h2>
       <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
