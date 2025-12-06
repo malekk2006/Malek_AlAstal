@@ -94,7 +94,6 @@ document.addEventListener('DOMContentLoaded', () => {
     navLinks.forEach(link => {
       // Use pointerup to support touch and mouse reliably
       link.addEventListener('pointerup', (e) => {
-        // allow default for external links (target _blank)
         const href = link.getAttribute('href') || '';
         if (href.startsWith('#')) {
           e.preventDefault();
@@ -151,7 +150,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Smooth scroll for internal links outside nav (works on desktop too)
   document.querySelectorAll('a[href^="#"]').forEach(a => {
-    // skip if handled by navLinks pointerup above
     if (a.closest('.main-nav')) return;
     a.addEventListener('click', e => {
       e.preventDefault();
@@ -194,7 +192,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Staggered reveal for nav links on open (also run once on load for desktop)
     const navItems = Array.from(document.querySelectorAll('.main-nav .nav-link'));
     if (navItems.length) {
-      // small entrance on page load for desktop
       if (window.innerWidth > 820) {
         gsap.from(navItems, { autoAlpha: 0, y: -6, stagger: 0.06, duration: 0.6, ease: 'power2.out' });
       }
