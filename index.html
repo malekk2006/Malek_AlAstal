@@ -41,7 +41,6 @@
         <a href="#resources" class="nav-link">Resources</a>
         <a href="#contact" class="nav-link">Contact</a>
 
-        <!-- controls inside nav for mobile accessibility -->
         <div class="nav-controls">
           <button id="themeToggleNav" class="btn small" aria-label="Toggle theme">Light</button>
           <button id="langToggleNav" class="btn small" aria-label="Toggle language">EN</button>
@@ -56,7 +55,7 @@
   </header>
 
   <main class="container">
-    <section class="hero" id="home">
+    <section class="hero gs-reveal" id="home">
       <div class="hero-left">
         <h2 class="hero-title" id="heroTitle">𓆩💻 مَـالِـك الأَسْطَـل 𓆪</h2>
 
@@ -95,7 +94,7 @@
       </div>
 
       <div class="hero-right">
-        <div class="profile-card">
+        <div class="profile-card gs-reveal">
           <img
             src="assets/profile.webp"
             alt="Malek Alastal portrait"
@@ -112,12 +111,12 @@
       </div>
     </section>
 
-    <section id="about" class="card">
+    <section id="about" class="card gs-reveal">
       <h3 id="aboutTitle">About Me</h3>
       <p id="aboutText">I am Malek Alastal, focused on cybersecurity, vulnerability analysis, and building protective solutions. I work on learning projects and share resources with the community.</p>
     </section>
 
-    <section id="college" class="card row">
+    <section id="college" class="card row gs-reveal">
       <div class="col">
         <h3 id="collegeTitle">𓆩🎓 Proudly stepped into the universe of tech & security</h3>
         <p id="collegeText">
@@ -139,7 +138,7 @@
       </div>
     </section>
 
-    <section id="skills" class="card">
+    <section id="skills" class="card gs-reveal">
       <h3 id="skillsTitle">Skills</h3>
       <div class="skills-list">
         <div class="skill">
@@ -165,7 +164,7 @@
       </div>
     </section>
 
-    <section id="resources" class="card">
+    <section id="resources" class="card gs-reveal">
       <h3 id="resourcesTitle">Useful Learning Links</h3>
       <ul class="resources-list">
         <li><a href="https://www.cybrary.it" target="_blank" rel="noopener">Cybrary</a></li>
@@ -175,14 +174,14 @@
       </ul>
     </section>
 
-    <section id="contact" class="card">
+    <section id="contact" class="card gs-reveal">
       <h3>Contact</h3>
       <p>WhatsApp: <a href="https://wa.me/972598561044" target="_blank" rel="noopener">+972 59-856-1044</a></p>
       <p>Instagram: <a href="https://instagram.com/malek_alastal_" target="_blank" rel="noopener">@malek_alastal_</a></p>
       <p>GitHub: <a href="https://github.com/malekk2006" target="_blank" rel="noopener">malekk2006</a></p>
     </section>
 
-    <footer class="site-footer">
+    <footer class="site-footer gs-reveal">
       <div class="footer-inner">
         <div class="left"><p>© <span id="year"></span> ✧ ᴱᴺᴳ.ᴹᴬᴸᴱᴷ ᴬˡᵃˢᵗᵃˡ ✧</p></div>
         <div class="right social-icons">
@@ -194,6 +193,10 @@
       </div>
     </footer>
   </main>
+
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
   <script src="script.js"></script>
 </body>
