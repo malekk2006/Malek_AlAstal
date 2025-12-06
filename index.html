@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <title>✧ ᴱᴺᴳ.ᴹᴬᴸᴱᴷ ᴬˡᵃˢᵗᵃˡ ✧</title>
   <meta name="description" content="Malek Alastal — Cybersecurity student. Portfolio, resources, skills and contact." />
   <link rel="icon" href="assets/favicon.jpeg" type="image/jpeg" />
@@ -40,9 +40,15 @@
         <a href="#skills" class="nav-link">Skills</a>
         <a href="#resources" class="nav-link">Resources</a>
         <a href="#contact" class="nav-link">Contact</a>
+
+        <!-- controls inside nav for mobile accessibility -->
+        <div class="nav-controls">
+          <button id="themeToggleNav" class="btn small" aria-label="Toggle theme">Light</button>
+          <button id="langToggleNav" class="btn small" aria-label="Toggle language">EN</button>
+        </div>
       </nav>
 
-      <div class="controls">
+      <div class="controls desktop-controls">
         <button id="themeToggle" class="btn" aria-label="Toggle theme">Light Mode</button>
         <button id="langToggle" class="btn" aria-label="Toggle language">EN</button>
       </div>
@@ -138,41 +144,25 @@
       <div class="skills-list">
         <div class="skill">
           <div class="skill-info"><span>HTML</span><span class="percent">95%</span></div>
-          <div class="skill-bar"><div class="skill-fill" data-value="95" role="progressbar" aria-valuenow="95"></div></div>
+          <div class="skill-bar"><div class="skill-fill" data-value="95" role="progressbar" aria-valuenow="0"></div></div>
         </div>
         <div class="skill">
           <div class="skill-info"><span>JavaScript</span><span class="percent">85%</span></div>
-          <div class="skill-bar"><div class="skill-fill" data-value="85" role="progressbar" aria-valuenow="85"></div></div>
+          <div class="skill-bar"><div class="skill-fill" data-value="85" role="progressbar" aria-valuenow="0"></div></div>
         </div>
         <div class="skill">
           <div class="skill-info"><span>CSS</span><span class="percent">75%</span></div>
-          <div class="skill-bar"><div class="skill-fill" data-value="75" role="progressbar" aria-valuenow="75"></div></div>
+          <div class="skill-bar"><div class="skill-fill" data-value="75" role="progressbar" aria-valuenow="0"></div></div>
         </div>
         <div class="skill">
           <div class="skill-info"><span>Python</span><span class="percent">90%</span></div>
-          <div class="skill-bar"><div class="skill-fill" data-value="90" role="progressbar" aria-valuenow="90"></div></div>
+          <div class="skill-bar"><div class="skill-fill" data-value="90" role="progressbar" aria-valuenow="0"></div></div>
         </div>
         <div class="skill">
           <div class="skill-info"><span>Linux</span><span class="percent">80%</span></div>
-          <div class="skill-bar"><div class="skill-fill" data-value="80" role="progressbar" aria-valuenow="80"></div></div>
+          <div class="skill-bar"><div class="skill-fill" data-value="80" role="progressbar" aria-valuenow="0"></div></div>
         </div>
       </div>
-    </section>
-
-    <section id="recommendations" class="card">
-      <h3>Site Checklist & Recommendations</h3>
-      <table class="rec-table" role="table" aria-label="Recommendations">
-        <tr><td>⚡ Loading speed</td><td>Ensure images are compressed (WebP or optimized JPEG)</td></tr>
-        <tr><td>📱 Mobile responsiveness</td><td>Test layout on mobile screens — text, images, menus</td></tr>
-        <tr><td>🧭 Clear navigation</td><td>Menu: Home – About – Projects – College – Contact</td></tr>
-        <tr><td>🖼 Image & icon quality</td><td>Use high-quality compressed images and official social icons</td></tr>
-        <tr><td>🔎 SEO</td><td>Add meta descriptions, structured H1/H2 headings</td></tr>
-        <tr><td>📄 CV download</td><td>Add a clear "Download CV (PDF)" button</td></tr>
-        <tr><td>📂 Projects / Portfolio</td><td>Show projects with descriptions and GitHub links</td></tr>
-        <tr><td>🎨 Visual animations</td><td>Use subtle entrance and hover effects for polish</td></tr>
-        <tr><td>🛡 HTTPS</td><td>Ensure all links use HTTPS (GitHub Pages provides HTTPS)</td></tr>
-        <tr><td>🌙 Dark / Light mode</td><td>Provide a toggle with contrasting, accessible colors</td></tr>
-      </table>
     </section>
 
     <section id="resources" class="card">
@@ -194,7 +184,7 @@
 
     <footer class="site-footer">
       <div class="footer-inner">
-        <div class="left"><p>© <span id="year"></span>✧ ᴱᴺᴳ.ᴹᴬᴸᴱᴷ ᴬˡᵃˢᵗᵃˡ ✧</p></div>
+        <div class="left"><p>© <span id="year"></span> ✧ ᴱᴺᴳ.ᴹᴬᴸᴱᴷ ᴬˡᵃˢᵗᵃˡ ✧</p></div>
         <div class="right social-icons">
           <a href="https://instagram.com/malek_alastal_" target="_blank" aria-label="Instagram" rel="noopener"><i class="fab fa-instagram"></i></a>
           <a href="https://facebook.com/MalekAlastal" target="_blank" aria-label="Facebook" rel="noopener"><i class="fab fa-facebook"></i></a>
