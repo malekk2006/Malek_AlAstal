@@ -1,7 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
   const themeBtn = document.getElementById('themeToggle');
   const langBtn = document.getElementById('langToggle');
+  const navToggle = document.getElementById('navToggle');
+  const mainNav = document.getElementById('mainNav');
   const yearEl = document.getElementById('year');
+
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   // Theme toggle with localStorage
@@ -15,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   function updateThemeButton() { themeBtn.textContent = document.body.classList.contains('light') ? 'Dark Mode' : 'Light Mode'; }
 
-  // Language toggle (EN <-> AR) — Arabic bio shown by default
+  // Language toggle (EN <-> AR)
   let lang = localStorage.getItem('lang') || 'ar';
   applyLanguage(lang);
   langBtn.addEventListener('click', () => {
@@ -23,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('lang', lang);
     applyLanguage(lang);
   });
+
   function applyLanguage(l) {
     const doc = document.documentElement;
     const bioAr = document.getElementById('bioAr');
@@ -30,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (l === 'ar') {
       doc.lang = 'ar'; doc.dir = 'rtl'; langBtn.textContent = 'EN';
       document.getElementById('heroTitle').textContent = '𓆩💻 مَـالِـك الأَسْطَـل 𓆪';
-      bioAr.style.display = 'block';
+      if (bioAr) bioAr.style.display = 'block';
       if (bioEn) bioEn.hidden = true;
       document.getElementById('aboutTitle').textContent = 'نبذة عني';
       document.getElementById('aboutText').textContent = 'أنا مالك العستال، مهتم بالأمن السيبراني، تحليل الثغرات، وبناء حلول حماية. أعمل على مشاريع تعليمية وأشارك موارد للمجتمع.';
@@ -43,7 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       doc.lang = 'en'; doc.dir = 'ltr'; langBtn.textContent = 'AR';
       document.getElementById('heroTitle').textContent = '𓆩⚙ Malek Alastal 𓆪';
-      if (bioEn) { bioEn.hidden = false; bioAr.style.display = 'none'; }
+      if (bioEn) bioEn.hidden = false;
+      if (bioAr) bioAr.style.display = 'none';
       document.getElementById('aboutTitle').textContent = 'About Me';
       document.getElementById('aboutText').textContent = 'I am Malek Alastal, focused on cybersecurity, vulnerability analysis, and building protective solutions. I work on learning projects and share resources with the community.';
       document.getElementById('collegeTitle').textContent = '𓆩🎓 Proudly stepped into the universe of tech & security';
@@ -53,6 +58,24 @@ document.addEventListener('DOMContentLoaded', () => {
       document.querySelector('.btn.primary').textContent = 'Browse Resources';
       document.querySelector('.btn.outline').innerHTML = '<i class="fab fa-whatsapp"></i> WhatsApp';
     }
+  }
+
+  // Nav toggle (hamburger) for mobile
+  if (navToggle && mainNav) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = mainNav.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    // Close nav when clicking a link (mobile)
+    mainNav.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        if (mainNav.classList.contains('open')) {
+          mainNav.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
   }
 
   // Skills animation when in view
